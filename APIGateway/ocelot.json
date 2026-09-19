@@ -28,7 +28,7 @@
       "DownstreamHttpMethod": "Get",
       "SwaggerKey": "clientes",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       },
       "RateLimitOptions": { // NUEVA CONFIGURACION
         "ClientIdHeader": "ClientId",
@@ -53,7 +53,7 @@
       "DownstreamHttpMethod": "Get",
       "SwaggerKey": "clientes",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -70,7 +70,7 @@
       "DownstreamHttpMethod": "Post",
       "SwaggerKey": "clientes",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -87,7 +87,7 @@
       "DownstreamHttpMethod": "Put",
       "SwaggerKey": "clientes",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -104,7 +104,7 @@
       "DownstreamHttpMethod": "Delete",
       "SwaggerKey": "clientes",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -121,11 +121,28 @@
       "DownstreamHttpMethod": "Get",
       "SwaggerKey": "pedidos",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       },
       "FileCacheOptions": {
         "ttlSeconds": 5,
         "Region": "default"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pedidos/cliente/{clienteId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5017
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/cliente/{clienteId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHttpMethod": "Get",
+      "SwaggerKey": "pedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -142,7 +159,7 @@
       "DownstreamHttpMethod": "Get",
       "SwaggerKey": "pedidos",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -159,7 +176,7 @@
       "DownstreamHttpMethod": "Post",
       "SwaggerKey": "pedidos",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -176,7 +193,7 @@
       "DownstreamHttpMethod": "Put",
       "SwaggerKey": "pedidos",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     },
     {
@@ -193,38 +210,12 @@
       "DownstreamHttpMethod": "Delete",
       "SwaggerKey": "pedidos",
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
+        "AuthenticationProviderKeys": [ "Bearer" ]
       }
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5217",
-    "SwaggerEndPoints": [
-      {
-        "Key": "clientes",
-        "Config": [
-          {
-            "Name": "clientes API",
-            "Scheme": "http",
-            "Host": "localhost",
-            "Port": 5288,
-            "Path": "/swagger/v1/swagger.json"
-          }
-        ]
-      },
-      {
-        "Key": "pedidos",
-        "Config": [
-          {
-            "Name": "pedidos API",
-            "Scheme": "http",
-            "Host": "localhost",
-            "Port": 5017,
-            "Path": "/swagger/v1/swagger.json"
-          }
-        ]
-      }
-    ],
+    "BaseUrl": "http://localhost:5173",
     "RateLimitOptions": { // NUEVA CONFIGURACION
       "ClientIdHeader": "ClientId",
       "ClientWhitelist": [],
@@ -237,5 +228,27 @@
       "ttlSeconds": 60,
       "Region": "default"
     }
-  }
+  },
+  "SwaggerEndPoints": [
+    {
+      "Key": "clientes",
+      "Config": [
+        {
+          "Name": "clientes API",
+          "Version": "v1",
+          "Url": "http://localhost:5288/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "pedidos",
+      "Config": [
+        {
+          "Name": "pedidos API",
+          "Version": "v1",
+          "Url": "http://localhost:5017/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
 }

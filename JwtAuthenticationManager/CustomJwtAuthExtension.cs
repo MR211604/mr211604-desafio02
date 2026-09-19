@@ -14,7 +14,7 @@ namespace JwtAuthenticationManager
             {
                 o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(o =>
+            }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, o =>
             {
                 o.RequireHttpsMetadata = false;
                 o.SaveToken = true;
