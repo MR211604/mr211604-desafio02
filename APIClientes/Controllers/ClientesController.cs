@@ -38,14 +38,17 @@ public class ClientesController : ControllerBase
     // PUT: api/Cliente/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutCliente(int? id, Cliente cliente)
+    public async Task<IActionResult> PutCliente(int id, Cliente cliente)
     {
-        if (id != cliente.Id)
+        var clienteExistente = await _context.Clientes.FindAsync(id);
+        if (clienteExistente == null)
         {
-            return BadRequest();
+            return NotFound();
         }
 
-        _context.Entry(cliente).State = EntityState.Modified;
+        // El ID de la ruta es la fuente de verdad; no es necesario enviarlo en el cuerpo.
+        clienteExistente.Nombre = cliente.Nombre;
+        clienteExistente.Apellido = cliente.Apellido;
 
         try
         {

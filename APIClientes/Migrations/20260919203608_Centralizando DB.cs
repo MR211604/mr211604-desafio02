@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace APIPedidos.Migrations
+namespace APIClientes.Migrations
 {
     /// <inheritdoc />
-    public partial class MigracionenPCpersonal : Migration
+    public partial class CentralizandoDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

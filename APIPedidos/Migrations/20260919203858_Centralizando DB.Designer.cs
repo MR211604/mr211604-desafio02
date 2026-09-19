@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIPedidos.Migrations
 {
     [DbContext(typeof(PedidosDbContext))]
-    [Migration("20260918235853_AddClienteIdToPedido")]
-    partial class AddClienteIdToPedido
+    [Migration("20260919203858_Centralizando DB")]
+    partial class CentralizandoDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

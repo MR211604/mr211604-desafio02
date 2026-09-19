@@ -230,7 +230,7 @@
       "EnableRateLimiting": true,
       "Period": "1m",
       "PeriodTimespan": 60,
-      "Limit": 100
+      "Limit": 5
     },
     "FileCacheOptions": {
       "ttlSeconds": 60,
