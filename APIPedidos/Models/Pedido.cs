@@ -10,7 +10,7 @@ namespace APIPedidos.Models
 
         public string Descripcion { get; set; } = string.Empty;
 
-        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "ClienteId debe ser un identificador válido.")]
         public int ClienteId { get; set; }
     }
 }

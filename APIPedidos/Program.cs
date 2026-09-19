@@ -9,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<PedidosDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddHttpClient("ClientesApi", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["Services:ClientesApi"]!);
+});
 
 builder.Services.AddOutputCache();
 builder.Services.AddCustomJwtAuthentication();
@@ -28,9 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-app.UseOutputCache(); // <- NUEVO 
-
+app.UseOutputCache();
 app.UseAuthentication();
 app.UseAuthorization();
 
