@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="APIClientes/APIClientes.csproj" />
+  <Project Path="APIGateway/APIGateway.csproj" />
+  <Project Path="APIPedidos/APIPedidos.csproj" />
+  <Project Path="JwtAuthenticationManager/JwtAuthenticationManager.csproj" Id="f94acfff-a6e2-4114-8b4b-bcfa81e3bddd" />
+</Solution>

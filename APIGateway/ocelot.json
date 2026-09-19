@@ -1,0 +1,241 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHttpMethod": "Post",
+      "SwaggerKey": "clientes"
+    },
+    {
+      "DownstreamPathTemplate": "/api/clientes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/clientes",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHttpMethod": "Get",
+      "SwaggerKey": "clientes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": { // NUEVA CONFIGURACION
+        "ClientIdHeader": "ClientId",
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 5
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/clientes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/clientes/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHttpMethod": "Get",
+      "SwaggerKey": "clientes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/clientes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/clientes",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHttpMethod": "Post",
+      "SwaggerKey": "clientes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/clientes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/clientes/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHttpMethod": "Put",
+      "SwaggerKey": "clientes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/clientes/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/clientes/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHttpMethod": "Delete",
+      "SwaggerKey": "clientes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pedidos",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5017
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHttpMethod": "Get",
+      "SwaggerKey": "pedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "FileCacheOptions": {
+        "ttlSeconds": 5,
+        "Region": "default"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pedidos/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5017
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHttpMethod": "Get",
+      "SwaggerKey": "pedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pedidos",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5017
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHttpMethod": "Post",
+      "SwaggerKey": "pedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pedidos/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5017
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHttpMethod": "Put",
+      "SwaggerKey": "pedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pedidos/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5017
+        }
+      ],
+      "UpstreamPathTemplate": "/pedidos/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHttpMethod": "Delete",
+      "SwaggerKey": "pedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5217",
+    "SwaggerEndPoints": [
+      {
+        "Key": "clientes",
+        "Config": [
+          {
+            "Name": "clientes API",
+            "Scheme": "http",
+            "Host": "localhost",
+            "Port": 5288,
+            "Path": "/swagger/v1/swagger.json"
+          }
+        ]
+      },
+      {
+        "Key": "pedidos",
+        "Config": [
+          {
+            "Name": "pedidos API",
+            "Scheme": "http",
+            "Host": "localhost",
+            "Port": 5017,
+            "Path": "/swagger/v1/swagger.json"
+          }
+        ]
+      }
+    ],
+    "RateLimitOptions": { // NUEVA CONFIGURACION
+      "ClientIdHeader": "ClientId",
+      "ClientWhitelist": [],
+      "EnableRateLimiting": true,
+      "Period": "1m",
+      "PeriodTimespan": 60,
+      "Limit": 100
+    },
+    "FileCacheOptions": {
+      "ttlSeconds": 60,
+      "Region": "default"
+    }
+  }
+}
