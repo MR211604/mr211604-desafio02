@@ -17,7 +17,7 @@ namespace APIClientes.Controllers
 
             if (authResponse == null)
             {
-                return Unauthorized("Credenciales inválidas");
+                return BadRequest("Credenciales invalidas");
             }
 
             return Ok(authResponse);
